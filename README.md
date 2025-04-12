@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+# NFT Uploader
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React application for minting NFTs with custom names and images on the Ethereum Sepolia testnet.
 
-## Available Scripts
+![NFT Uploader Screenshot](screenshot.png)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Custom NFT Naming**: Give your NFTs unique names
+- **Image Upload**: Upload and preview images before minting
+- **IPFS Storage**: Automatically uploads images and metadata to IPFS via Pinata
+- **Blockchain Integration**: Mints NFTs on the Ethereum Sepolia testnet
+- **Transaction Tracking**: View transaction details and NFT IDs
+- **Transaction History**: Automatically saves transaction details to JSON files
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React**: Frontend framework
+- **TypeScript**: Type-safe JavaScript
+- **Ethers.js**: Ethereum blockchain interaction
+- **Pinata**: IPFS storage and pinning
+- **Web3**: Blockchain connectivity
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- MetaMask or another Web3 wallet
+- Pinata account for IPFS storage
+- Ethereum Sepolia testnet ETH (for gas fees)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/nft-uploader.git
+   cd nft-uploader
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the root directory with the following variables:
+   ```
+   REACT_APP_PINATA_JWT=your_pinata_jwt_token
+   REACT_APP_PINATA_API_KEY=your_pinata_api_key
+   REACT_APP_PINATA_SECRET_KEY=your_pinata_secret_key
+   REACT_APP_PRIVATE_KEY=your_ethereum_private_key
+   REACT_APP_SEPOLIA_RPC_URL=your_sepolia_rpc_url
+   REACT_APP_INFURA_PROJECT_ID=your_infura_project_id
+   ```
 
-### `npm run eject`
+   > **Note**: You can get a Pinata JWT token from your Pinata account dashboard. The private key should be from a wallet with Sepolia testnet ETH.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Enter a name for your NFT in the "NFT Name" field
+2. Upload an image file using the file input
+3. Preview your image in the preview section
+4. Click "Mint NFT" to mint your NFT
+5. Wait for the transaction to be confirmed
+6. View the transaction details and NFT ID
+7. A JSON file with transaction details will be automatically downloaded
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Smart Contract
 
-## Learn More
+This application interacts with an NFT smart contract deployed on the Ethereum Sepolia testnet. The contract address is:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+0x8cFe8F5395c87522Ce96915c2B492960bd63633E
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## IPFS Storage
+
+The application uses Pinata for IPFS storage. When you upload an image and mint an NFT:
+
+1. The image is uploaded to IPFS via Pinata
+2. Metadata (name, description, image URL) is created and uploaded to IPFS
+3. The metadata IPFS URL is used to mint the NFT
+
+## Development
+
+### Project Structure
+
+```
+nft-uploader/
+├── public/              # Static files
+├── src/                 # Source code
+│   ├── App.tsx          # Main application component
+│   ├── App.css          # Styles
+│   └── index.tsx        # Entry point
+├── .env                 # Environment variables
+├── craco.config.js      # Webpack configuration
+└── package.json         # Dependencies and scripts
+```
+
+### Customization
+
+- To change the smart contract, update the `contractAddress` and `contractABI` in `App.tsx`
+- To modify the metadata structure, update the metadata object in the `mintNFT` function
+
+## License
+
+MIT
+
+## Acknowledgements
+
+- [Ethers.js](https://docs.ethers.org/) for Ethereum interaction
+- [Pinata](https://pinata.cloud/) for IPFS storage
+- [Sepolia Testnet](https://sepoliafaucet.com/) for test ETH
