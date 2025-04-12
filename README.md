@@ -109,12 +109,8 @@ nft-uploader/
 - To change the smart contract, update the `contractAddress` and `contractABI` in `App.tsx`
 - To modify the metadata structure, update the metadata object in the `mintNFT` function
 
-## License
-
-MIT
 
 ## Acknowledgements
 
-- [Ethers.js](https://docs.ethers.org/) for Ethereum interaction
 - [Pinata](https://pinata.cloud/) for IPFS storage
 - [Sepolia Testnet](https://sepoliafaucet.com/) for test ETH
