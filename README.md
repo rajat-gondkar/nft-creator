@@ -2,7 +2,10 @@
 
 A modern React application for minting NFTs with custom names and images on the Ethereum Sepolia testnet.
 
-![NFT Uploader Screenshot](screenshot.png)
+## Preview
+
+<img width="600" alt="Screenshot 2025-04-13 at 4 13 11 AM" src="https://github.com/user-attachments/assets/dcffa001-1e05-469e-a5b8-39a1d24327cc" />
+
 
 ## Features
 
