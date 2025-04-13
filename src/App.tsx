@@ -308,6 +308,7 @@ function App() {
             <p>Name: {nftName}</p>
             <p>Transaction Hash: <a href={`https://sepolia.etherscan.io/tx/${txHash}`} target="_blank" rel="noopener noreferrer">{txHash}</a></p>
             <p>NFT ID: {nftId}</p>
+            <p>NFT Link: <a href={`https://testnets.opensea.io/assets/sepolia/${contractAddress}/${nftId}`} target="_blank" rel="noopener noreferrer">View on OpenSea</a></p>
             <p>Transaction details have been saved to a file.</p>
           </div>
         )}
